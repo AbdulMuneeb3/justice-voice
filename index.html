@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Justice Voice</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      href="/your_path_to_theme_that_uses_version_5_files"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <!-- boot -->
+     <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+<script src="https://mediafiles.botpress.cloud/22116670-9e9a-46a0-bca2-4578b73ea1e1/webchat/config.js" defer></script>
+
+  </head>
+  <body>
+    <!-- sidebar starts -->
+    <div class="sidebar">
+      <img id="dp" src="images/jc.png" alt="" onclick="loadPage('index')" />
+      <div class="sidebarOption active" onclick="loadPage('index')">
+        <span class="material-icons"> home </span>
+        <h2>Home</h2>
+      </div>
+
+      <div class="sidebarOption" onclick="loadPage('explore')">
+        <span class="material-icons"> tag </span>
+        <h2>Explore</h2>
+      </div>
+
+      <div class="sidebarOption" onclick="loadPage('notification')">
+        <span class="material-icons"> notifications_none </span>
+        <h2>Notifications</h2>
+      </div>
+
+      <div class="sidebarOption" onclick="loadPage('contact')">
+        <span class="material-icons">headset </span>
+        <h2>Contact</h2>
+      </div>
+
+      <div class="sidebarOption" onclick="loadPage('profile')">
+        <span class="material-icons"> perm_identity </span>
+        <h2>Profile</h2>
+      </div>
+
+      <button class="sidebar__Publish" onclick="showPublishSection()">
+        Publish
+      </button>
+    </div>
+    <!-- sidebar ends -->
+
+    <!-- feed starts -->
+    <div class="feed">
+      <div class="feed__header">
+        <h2 style="color: #db3a34">Home</h2>
+      </div>
+
+      <!-- Publishbox starts -->
+      <div class="PublishBox">
+        <form>
+          <div class="Publishbox__input">
+            <div
+              onclick="loadPage('profile')"
+              class="Publishbox__input__profileimage"
+            >
+              <img
+                src="https://imgs.search.brave.com/9Epxh5WUWTkxQWN04VRcUNX5Qtthe52RuGbeL8rQ12c/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9ob29kZWQtaGFj/a2VyLXVzZXMtYmlu/YXJ5LWNvZGUtY29u/Y2VwdC1ib3RoLWhh/Y2tpbmctbWFsd2Fy/ZV80MTA1MTYtMTc0/MzIuanBnP3NpemU9/NjI2JmV4dD1qcGc"
+                alt=""
+              />
+            </div>
+            <input
+              type="text"
+              placeholder="Report a Scam..."
+              style="color: #db3a34"
+            />
+          </div>
+          <button class="PublishBox__PublishButton">Publish</button>
+        </form>
+      </div>
+      <!-- Publishbox ends -->
+
+      <!-- Publish section Start Here -->
+      <div class="Publish__container" id="Publish__container">
+        <div class="Publish__section">
+          <!-- Header button -->
+          <div class="Publish__header" onclick="hidePublishSection()">
+            <span class="material-icons">clear</span>
+          </div>
+          <!-- Body section -->
+          <div class="Publish__message">
+            <!-- left side icons -->
+            <div class="message__left">
+              <img src="./images/Publishicon.PNG" alt="Publish_lefticon" />
+            </div>
+            <!-- Message right -->
+            <div class="message__right">
+              <!-- Top right body and input message -->
+              <div class="message__righttop">
+                <textarea
+                  type="textarea"
+                  cols="10"
+                  rows="4"
+                  placeholder="Report a Scam?"
+                ></textarea>
+                <div class="message__body">
+                  <span class="material-icons">language</span>
+                  <p>Everyone can reply</p>
+                </div>
+              </div>
+              <!-- bottom right button and Publish btn -->
+              <div class="message__btns">
+                <div class="message__attachementicons">
+                  <span class="material-icons message__attachicons"
+                    >image
+                  </span>
+                  <input type="file">
+<!-- 
+                  <span id="upload" class="material-icons message__attachicons"
+                    >gif_box</span
+                  >
+                  <span class="material-icons message__attachicons"
+                    >align_horizontal_left</span
+                  >
+                  <span class="material-icons message__attachicons"
+                    >sentiment_satisfied_alt</span
+                  >
+                  <span class="material-icons message__attachicons"
+                    >pending_actions</span
+                  > -->
+                </div>
+                <button id="Post" class="message__Publishbtn">Publish</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Publish section End Here -->
+
+      <!-- post starts -->
+      <div class="post">
+        <div class="post__avatar">
+          <img
+            src="https://imgs.search.brave.com/9Epxh5WUWTkxQWN04VRcUNX5Qtthe52RuGbeL8rQ12c/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9ob29kZWQtaGFj/a2VyLXVzZXMtYmlu/YXJ5LWNvZGUtY29u/Y2VwdC1ib3RoLWhh/Y2tpbmctbWFsd2Fy/ZV80MTA1MTYtMTc0/MzIuanBnP3NpemU9/NjI2JmV4dD1qcGc"
+            alt=""
+          />
+        </div>
+
+        <div class="post__body">
+          <div class="post__header">
+            <div class="post__headerText">
+              <h3>
+                Anonymous
+                <span class="post__headerSpecial"
+                  ><span class="material-icons post__badge"> verified </span
+                  >@anonymous</span
+                >
+              </h3>
+            </div>
+            <div class="post__headerDescription">
+              <p>
+                🚨 Scam Alert! 🚨 "SugarThread," a sole Publisher interface, has
+                Elon Musk's attention. He calls it a "tech wolf in financial
+                sheep's clothing." 🕵️‍♂️ Join the convo with #ElonOnScam. Let's
+                unravel the truth together! 💡🌐 #ScamExposed #DigitalMystery
+              </p>
+            </div>
+          </div>
+          <img src="images/scam1.png" alt="scam1" />
+          <div class="post__footer">
+            <div id="openModalButton">
+              <span class="material-icons"> repeat </span>
+            </div>
+            <span class="material-icons"> comment </span>
+            <span class="material-icons"> share </span>
+          </div>
+        </div>
+      </div>
+      <!-- post ends -->
+
+      <div class="card">
+        <div class="card__skeleton card__title"></div>
+        <div class="card__skeleton card__description"></div>
+      </div>
+    </div>
+
+    <!-- Trending section starts -->
+    <!-- feed starts -->
+    <div class="trending">
+      <div class="trend_search">
+        <i class="material-icons trend_search_icon" style="font-size: 28px"
+          >search</i
+        >
+        <div class="trend_search_font">Search Scam..</div>
+      </div>
+
+      <div class="trend_main">
+        <div class="trend_main_heading">
+          <div><strong>Trends Scams for you</strong></div>
+          <i class="material-icons">settings</i>
+        </div>
+
+        <div class="trend_card_img">
+          <div class="trend_card_gray">Trending Worldwide</div>
+          <div class="trend_card_heading">#Breaking News</div>
+          <div class="trend_card_content">
+            <div class="text">
+              <div class="heading">FBI Fraud Alert</div>
+              <div class="content">
+                The FBI monitors e-mail scams and sends out alerts like this
+                one. See one of the newest technologies used by banks and
+                retailers next.
+              </div>
+            </div>
+            <div class="trend_img">
+              <img
+                src="https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL2VtYWlsLXNjYW0tMi5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMH0sInRvRm9ybWF0IjoiYXZpZiJ9fQ=="
+                alt="scam"
+              />
+            </div>
+          </div>
+          <div class="trend_card_gray">
+            10,094 people are Publishing about this
+          </div>
+        </div>
+        <div class="trend_card">
+          <div class="trend_card_gray">Trending Worldwide</div>
+          <div class="trend_card_heading">#WorldNews</div>
+          <div class="trend_card_gray">
+            125k Publishs<br />5,094 people are Publishing about this
+          </div>
+        </div>
+        <div class="trend_card_img">
+          <div class="trend_card_gray">Trending Worldwide</div>
+          <div class="trend_card_heading">#Breaking News</div>
+          <div class="trend_card_content">
+            <div class="text">
+              <div class="heading">Phishing Scam</div>
+              <div class="content">
+                The internet makes it easy for scammers to trick people into
+                giving away their money and personal information.<br />#phishingscam
+              </div>
+            </div>
+            <div class="trend_img">
+              <img
+                src="https://imgs.search.brave.com/jrI06Qmabc1xOOlx38sWQa5gnUeWu_FpAY-hwdYcmaw/rs:fit:860:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzA1LzAyLzYwLzE1/LzM2MF9GXzUwMjYw/MTU1NV83eU9TRzdG/ZGpnQzNWbHNXcUdO/cjRVM3FKbVoxN2M4/Ui5qcGc"
+                alt="phising"
+              />
+            </div>
+          </div>
+          <div class="trend_card_gray">
+            2,757 people are Publishing about this
+          </div>
+        </div>
+        <div class="trend_card">
+          <div class="trend_card_gray">Trending Worldwide</div>
+          <div class="trend_card_heading">#GreatestScamOfAllTime</div>
+          <div class="trend_card_gray">
+            100k Publishs<br />4,123 people are Publishing about this
+          </div>
+        </div>
+        <div class="show-more" style="color: #db3a34">Show More</div>
+      </div>
+    </div>
+
+    <!-- Modal and overlay elements -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="modal" id="myModal">
+      <span onclick="closeModal()" style="cursor: pointer; float: right"
+        >&times;</span
+      >
+      <div class="Publishbox__input">
+        <div
+          onclick="loadPage('profile')"
+          class="Publishbox__input__profileimage"
+        >
+          <img
+            src="https://imgs.search.brave.com/9Epxh5WUWTkxQWN04VRcUNX5Qtthe52RuGbeL8rQ12c/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9ob29kZWQtaGFj/a2VyLXVzZXMtYmlu/YXJ5LWNvZGUtY29u/Y2VwdC1ib3RoLWhh/Y2tpbmctbWFsd2Fy/ZV80MTA1MTYtMTc0/MzIuanBnP3NpemU9/NjI2JmV4dD1qcGc"
+            alt=""
+          />
+        </div>
+        <input
+          type="text"
+          placeholder="Report a Scam..."
+          style="color: #db3a34"
+        />
+      </div>
+      <p style="margin-top: 20px">
+        🚨 Scam Alert! 🚨 "SugarThread," a sole Publisher interface, has Elon
+        Musk's attention. He calls it a "tech wolf in financial sheep's
+        clothing." 🕵️‍♂️ Join the convo with #ElonOnScam. Let's unravel the truth
+        together! 💡🌐 #ScamExposed #DigitalMystery
+      </p>
+      <img
+        src="images/scam1.png"
+        alt="scam1"
+        style="
+          width: 300px;
+          height: 200px;
+          margin-top: 20px;
+          position: relative;
+          left: 120px;
+        "
+      />
+      <button class="message__Publishbtn" style="margin-top: 10px">
+        Publish
+      </button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+  <script>
+
+    function initializeModal() {
+      var openModalButton = document.getElementById("openModalButton");
+      var modalOverlay = document.getElementById("modalOverlay");
+
+      openModalButton.onclick = openModal;
+      modalOverlay.onclick = closeModal;
+    }
+    initializeModal();
+    let post=document.querySelector("#post");
+
+    post.addEventListener=onclick(alert("Entry successful!"));
+  </script>
+</html>

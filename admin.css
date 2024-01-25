@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#admin{
+    background-color: #db3934b6;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#ad-sec{
+    display: flex;
+   flex-direction: column;
+   margin: 1rem;
+}
+
+.e-mail{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 2rem;
+
+}

@@ -1,0 +1,167 @@
+/* css related to explore.html page, currently only for search and navbar section */
+
+/* header section css starts here */
+.feed header {
+  border-bottom: 2px solid #eee;
+}
+/* header section css ends here */
+
+/* search section css starts here */
+.search {
+  display: flex;
+  padding: 0.5em;
+  position: relative;
+  align-items: center;
+  width: 80%;
+}
+
+.search input {
+  background-color: rgba(154, 189, 209, 0.205);
+  border: none;
+  border-radius: 20px;
+  padding: 12px 0 12px 2.5em;
+  width: 80%;
+  margin-right: auto;
+}
+
+.search i:first-child {
+  position: absolute;
+  left: 1.1em;
+  color: rgba(90, 90, 90, 0.356);
+}
+
+.search i:last-child {
+  padding-right: 5px;
+  opacity: 0.7;
+  cursor: pointer;
+  position: relative;
+}
+
+.search i:last-child::after {
+  content: "";
+  position: absolute;
+  background-color: black;
+  height: 1.8rem;
+  width: 1.8rem;
+  opacity: 0;
+  border-radius: 50%;
+  top: -0.4rem;
+  left: -0.4rem;
+}
+
+.search i:last-child:hover::after {
+  opacity: 0.3;
+}
+
+/* search section css ends here */
+
+/* Trending section starts */
+.trending {
+  border-right: 1px solid var(--publish-background);
+  flex: 0.3;
+  width: 100%;
+  margin-top: 20px;
+}
+.trending i {
+  color: gray;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: fit-content;
+}
+.trend_search_font {
+  font-size: 18px;
+  margin-left: 15px;
+  color: gray;
+  margin-top: 5px;
+}
+.trend_main {
+  width: 80%;
+  background-color: rgb(248, 248, 248);
+  margin-top: 7px;
+  border-radius: 10px;
+  height: 92%;
+  justify-content: left;
+}
+.trend_main_heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 12px 5px;
+  border-bottom: 1px solid rgb(212, 212, 212);
+}
+.trend_main_heading div {
+  margin-left: 10px;
+  font-size: 20px;
+}
+.trend_main_heading i {
+  font-size: 25px;
+  color: var(--publish-color);
+}
+.trend_card_img,
+.trend_card {
+  line-height: 100%;
+  margin-bottom: auto;
+  margin-top: 12px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgb(192, 192, 192);
+}
+.trend_card_gray{
+  margin-top: 12px;
+  font-size: 14px;
+  color: rgb(163, 163, 163);
+  font-weight: 500;
+}
+.trend_card_heading{
+  margin-top: 2px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.trend_card_content{
+  margin: 12px 0 0;
+  border: 1px solid rgb(212, 212, 212);
+  height: 80px;
+  border-radius: 10px;
+  display: flex;
+}
+.trend_card_content .heading{
+  margin-left: 12px;
+  margin-top: 12px;
+  font-size: 17px;
+  color: rgb(163, 163, 163);
+}
+.trend_card_content .content{
+  margin-left: 12px;
+  margin-top: 7px;
+  font-size: 16px;
+  color: black;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;  
+}
+.text {
+  width: 75%;
+}
+.trend_img {
+  width: 30%;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  
+}
+.trend_img img {
+  height: 100%;
+  width: 100%;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  object-fit: cover;
+}
+.show-more{
+  margin-top: 12px;
+  margin-left: 12px;
+  font-size: 23px;
+  color: #50b7f5;
+}
+/* Trending sections ends */
+

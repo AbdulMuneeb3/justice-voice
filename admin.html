@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="admin.css">
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("fCQPJqulq6XE20CFY");
+   })();
+</script>
+</head>
+<body>
+    <header id="admin">
+        <h1 >Admin</h1>
+    </header>
+
+    <section id="ad-sec">
+        <h2>Justice Voice:</h2><br>
+        <p>
+            Justice Voice is a platform dedicated to promoting justice, equality, and fairness. We aim to provide a voice for those who may not otherwise be heard, advocating for positive change in legal systems and societal structures. Our mission is to empower individuals and communities to speak up, be heard, and make a difference in the pursuit of justice.
+        </p>
+    </section>
+    <div class="e-mail">
+        <input type="text" id="fullName" placeholder="Full Name" required><br>
+        <input type="email" id="email" placeholder="Email Id" required><br>
+        <textarea id="message" placeholder="Message" required></textarea><br>
+        <button onclick="SendMail()">Send</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

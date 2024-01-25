@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Options</title>
+  <style>
+    /* Styling for the options */
+    .options {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Icon triggering the options -->
+<div id="icon" onclick="showOptions()">Click me</div>
+
+<!-- Options container -->
+<div id="options" class="options">
+  <!-- Option 1: Write Code -->
+  <div onclick="writeCode()">Write Code</div>
+  <!-- Option 2: Other option -->
+  <div onclick="otherOption()">Other Option</div>
+</div>
+
+<script>
+  // Function to show the options when the icon is clicked
+  function showOptions() {
+    var options = document.getElementById('options');
+    options.style.display = (options.style.display === 'block') ? 'none' : 'block';
+  }
+
+  // Function for the "Write Code" option
+  function writeCode() {
+    // Implement your code-writing logic here
+    console.log("You chose to write code!");
+  }
+
+  // Function for the "Other Option"
+  function otherOption() {
+    // Implement logic for the other option
+    console.log("You chose the other option!");
+  }
+</script>
+
+</body>
+</html>
